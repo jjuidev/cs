@@ -1,6 +1,6 @@
 {
 	"name": "@jjuidev/cs",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "cs (claude switch) is helper CLI to switch claude code provider",
 	"license": "MIT",
 	"author": "jjuidev hi@jjuidev.com",
