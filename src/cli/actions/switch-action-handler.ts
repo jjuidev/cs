@@ -27,10 +27,4 @@ export async function switchAction(provider: string): Promise<void> {
 	ConfigStorageManager.setCurrentProvider(provider)
 	consola.success(`Switched to provider: ${provider}`)
 	consola.info(`Base URL: ${config.ANTHROPIC_BASE_URL}`)
-
-	try {
-		ShellIntegrationManager.sourceShell()
-	} catch {
-		consola.warn(`Please restart your shell or run: source ~/.zshrc`)
-	}
 }

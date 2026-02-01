@@ -3,7 +3,6 @@ export type ShellType = 'zsh' | 'bash' | 'fish' | 'unknown'
 export interface ShellInfo {
 	type: ShellType
 	rcFile: string
-	sourceCommand: string
 }
 
 export const CS_MARKER = '# ===== CS CONFIG START ====='

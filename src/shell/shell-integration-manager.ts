@@ -13,31 +13,26 @@ export class ShellIntegrationManager {
 
 		let type: ShellType = 'unknown'
 		let rcFile = ''
-		let sourceCommand = ''
 
 		switch (shellName) {
 			case 'zsh':
 				type = 'zsh'
 				rcFile = path.join(homeDir, '.zshrc')
-				sourceCommand = `source "${rcFile}"`
 				break
 			case 'bash':
 				type = 'bash'
 				rcFile = path.join(homeDir, '.bashrc')
-				sourceCommand = `source "${rcFile}"`
 				break
 			case 'fish':
 				type = 'fish'
 				rcFile = path.join(homeDir, '.config/fish/config.fish')
-				sourceCommand = `source "${rcFile}"`
 				break
 			default:
 				type = 'unknown'
 				rcFile = path.join(homeDir, '.zshrc')
-				sourceCommand = `source "${rcFile}"`
 		}
 
-		return { type, rcFile, sourceCommand }
+		return { type, rcFile }
 	}
 
 	static updateEnvExports(baseUrl: string, token: string): void {
@@ -75,14 +70,6 @@ export class ShellIntegrationManager {
 		if (existingBlock) {
 			content = content.replace(existingBlock.fullMatch, '')
 			fs.writeFileSync(rcFile, content, 'utf-8')
-		}
-	}
-
-	static sourceShell(): void {
-		const shellInfo = this.detectShell()
-		try {
-			execSync(shellInfo.sourceCommand, { stdio: 'inherit' })
-		} catch {
 		}
 	}
 
