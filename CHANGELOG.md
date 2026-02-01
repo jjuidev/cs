@@ -1,5 +1,11 @@
 # @jjuidev/cs
 
+## 0.0.2
+
+### Patch Changes
+
+- ca320d8: Add cs update cli
+
 ## 0.0.1
 
 ### Initial Release
