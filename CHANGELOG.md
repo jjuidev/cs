@@ -1,5 +1,12 @@
 # @jjuidev/cs
 
+## 0.0.2
+
+### Patch Changes
+
+- f6e6ca5: Add cs CLI
+- 43e48e8: Update cli without source shell
+
 ## 0.0.1
 
 ### Initial Release
