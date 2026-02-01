@@ -1,7 +1,6 @@
 import path from 'node:path'
 import os from 'node:os'
 import fs from 'node:fs'
-import { execSync } from 'node:child_process'
 import type { ShellInfo, ShellType } from './shell-types.js'
 import { CS_MARKER, CS_END_MARKER } from './shell-types.js'
 
