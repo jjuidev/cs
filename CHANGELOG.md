@@ -1,5 +1,11 @@
 # @jjuidev/cs
 
+## 0.0.3
+
+### Patch Changes
+
+- 96d4c86: Add cs update cli
+
 ## 0.0.2
 
 ### Patch Changes
