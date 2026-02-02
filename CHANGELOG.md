@@ -1,5 +1,11 @@
 # @jjuidev/cs
 
+## 0.0.4
+
+### Patch Changes
+
+- bf53375: Add Minimax provider
+
 ## 0.0.3
 
 ### Patch Changes
