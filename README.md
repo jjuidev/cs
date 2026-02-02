@@ -42,6 +42,9 @@ cs jjuidev
 
 # Switch to Kimi
 cs kimi
+
+# Switch to MiniMax
+cs minimax
 ```
 
 ### `cs config -p <provider>` - Configure Provider
@@ -145,6 +148,7 @@ cs update 0.0.3
 | jjuidev   | https://ai.jjuidev.com         | gemini-claude-opus-4-5-thinking, gemini-claude-sonnet-4-5-thinking, gemini-claude-sonnet-4-5 |
 | kimi      | https://api.kimi.com/coding    | kimi-k2.5, kimi-k2.5, kimi-k2.5                                                              |
 | z         | https://api.z.ai/api/anthropic | GLM-4.7, GLM-4.7, GLM-4.5-Air                                                                |
+| minimax   | https://api.minimax.io/anthropic | MiniMax-M2.1, MiniMax-M2.1, MiniMax-M2.1                                                    |
 
 ## Configuration
 
@@ -254,6 +258,7 @@ cs config -p claude -t sk-ant-api03-... -o claude-opus-4.5
 cs config -p claudible -t sk-ant-api03-... -o claude-sonnet-4.5
 cs config -p jjuidev -t sk-ant-api03-... -o gemini-claude-opus-4-5-thinking
 cs config -p kimi -t sk-ant-api03-... -o kimi-k2.5
+cs config -p minimax -t sk-ant-api03-... -o MiniMax-M2.1
 
 # View all configurations
 cs list
@@ -263,6 +268,7 @@ cs claude      # Use Claude
 cs jjuidev     # Switch to jjuidev
 cs claudible   # Switch to Claudible
 cs kimi        # Switch to Kimi
+cs minimax     # Switch to MiniMax
 ```
 
 ## Troubleshooting
@@ -274,7 +280,7 @@ cs kimi        # Switch to Kimi
 ```bash
 cs invalid-provider
 # Error: Invalid provider: invalid-provider
-# Info: Valid providers: claude, claudible, jjuidev, kimi, z
+# Info: Valid providers: claude, claudible, jjuidev, kimi, z, minimax
 ```
 
 **Missing token**

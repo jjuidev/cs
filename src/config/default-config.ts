@@ -1,4 +1,4 @@
-export type Providers = 'claude' | 'claudible' | 'jjuidev' | 'kimi' | 'z'
+export type Providers = 'claude' | 'claudible' | 'jjuidev' | 'kimi' | 'z' | 'minimax'
 
 export interface ProviderConfig {
 	ANTHROPIC_BASE_URL: string
@@ -40,13 +40,20 @@ export const DEFAULT_CONFIG: Record<Providers, ProviderConfig> = {
 	z: {
 		ANTHROPIC_BASE_URL: 'https://api.z.ai/api/anthropic',
 		ANTHROPIC_AUTH_TOKEN: '',
-		ANTHROPIC_DEFAULT_OPUS_MODEL: 'GLM-4.7',
-		ANTHROPIC_DEFAULT_SONNET_MODEL: 'GLM-4.7',
-		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'GLM-4.5-Air'
+		ANTHROPIC_DEFAULT_OPUS_MODEL: 'glm-4.7',
+		ANTHROPIC_DEFAULT_SONNET_MODEL: 'glm-4.7',
+		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'glm-4.5-air'
+	},
+	minimax: {
+		ANTHROPIC_BASE_URL: 'https://api.minimax.io/anthropic',
+		ANTHROPIC_AUTH_TOKEN: '',
+		ANTHROPIC_DEFAULT_OPUS_MODEL: 'MiniMax-M2.1',
+		ANTHROPIC_DEFAULT_SONNET_MODEL: 'MiniMax-M2.1',
+		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'MiniMax-M2.1'
 	}
 }
 
-export const VALID_PROVIDERS: Providers[] = ['claude', 'claudible', 'jjuidev', 'kimi', 'z']
+export const VALID_PROVIDERS: Providers[] = ['claude', 'claudible', 'jjuidev', 'kimi', 'z', 'minimax']
 
 export function isValidProvider(value: string): value is Providers {
 	return VALID_PROVIDERS.includes(value as Providers)
