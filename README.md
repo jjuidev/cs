@@ -4,7 +4,7 @@
 
 ## Features
 
-- 🔧 **Provider Management**: Switch between Claude, Claudible, jjuidev, and z providers
+- 🔧 **Provider Management**: Switch between Claude, Claudible, jjuidev, Kimi, and z providers
 - 📝 **Configuration Management**: Configure tokens, URLs, and models for each provider
 - 🖥️ **Shell Integration**: Automatically exports environment variables to your shell
 - 🎯 **Quick Switching**: Instant provider switching with `cs <provider>`
@@ -39,6 +39,9 @@ cs claudible
 
 # Switch to jjuidev
 cs jjuidev
+
+# Switch to Kimi
+cs kimi
 ```
 
 ### `cs config -p <provider>` - Configure Provider
@@ -54,6 +57,9 @@ cs config -p z -u https://api.z.ai/api/anthropic
 
 # Set specific models
 cs config -p claude -o claude-opus-4.5 -s claude-sonnet-4.5 -h claude-haiku-4.5
+
+# Configure Kimi provider
+cs config -p kimi -t sk-ant-api03-your-token
 
 # Load default configuration
 cs config -p claude
@@ -137,6 +143,7 @@ cs update 0.0.3
 | claude    | https://api.anthropic.com      | claude-opus-4.5, claude-sonnet-4.5, claude-haiku-4.5                                         |
 | claudible | https://claudible.io           | claude-opus-4.5, claude-sonnet-4.5, claude-haiku-4.5                                         |
 | jjuidev   | https://ai.jjuidev.com         | gemini-claude-opus-4-5-thinking, gemini-claude-sonnet-4-5-thinking, gemini-claude-sonnet-4-5 |
+| kimi      | https://api.kimi.com/coding    | kimi-k2.5, kimi-k2.5, kimi-k2.5                                                              |
 | z         | https://api.z.ai/api/anthropic | GLM-4.7, GLM-4.7, GLM-4.5-Air                                                                |
 
 ## Configuration
@@ -154,6 +161,13 @@ Configuration is stored in `~/.cs/settings.json`:
 			"ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4.5",
 			"ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4.5",
 			"ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4.5"
+		},
+		"kimi": {
+			"ANTHROPIC_BASE_URL": "https://api.kimi.com/coding",
+			"ANTHROPIC_AUTH_TOKEN": "",
+			"ANTHROPIC_DEFAULT_OPUS_MODEL": "kimi-k2.5",
+			"ANTHROPIC_DEFAULT_SONNET_MODEL": "kimi-k2.5",
+			"ANTHROPIC_DEFAULT_HAIKU_MODEL": "kimi-k2.5"
 		},
 		"z": {
 			"ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
@@ -239,6 +253,7 @@ cs z
 cs config -p claude -t sk-ant-api03-... -o claude-opus-4.5
 cs config -p claudible -t sk-ant-api03-... -o claude-sonnet-4.5
 cs config -p jjuidev -t sk-ant-api03-... -o gemini-claude-opus-4-5-thinking
+cs config -p kimi -t sk-ant-api03-... -o kimi-k2.5
 
 # View all configurations
 cs list
@@ -247,6 +262,7 @@ cs list
 cs claude      # Use Claude
 cs jjuidev     # Switch to jjuidev
 cs claudible   # Switch to Claudible
+cs kimi        # Switch to Kimi
 ```
 
 ## Troubleshooting
@@ -258,7 +274,7 @@ cs claudible   # Switch to Claudible
 ```bash
 cs invalid-provider
 # Error: Invalid provider: invalid-provider
-# Info: Valid providers: claude, claudible, jjuidev, z
+# Info: Valid providers: claude, claudible, jjuidev, kimi, z
 ```
 
 **Missing token**

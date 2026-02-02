@@ -17,8 +17,10 @@ export async function configAction(options: ConfigOptions): Promise<void> {
 	if (options.sonnet !== undefined) updates.ANTHROPIC_DEFAULT_SONNET_MODEL = options.sonnet
 	if (options.haiku !== undefined) updates.ANTHROPIC_DEFAULT_HAIKU_MODEL = options.haiku
 
+	// Always ensure provider exists in settings, even if no updates
+	ConfigStorageManager.updateProvider(options.provider, updates)
+
 	if (Object.keys(updates).length > 0) {
-		ConfigStorageManager.updateProvider(options.provider, updates)
 		consola.success(`Updated provider "${options.provider}" config`)
 	} else {
 		consola.info(`Provider "${options.provider}" config loaded`)

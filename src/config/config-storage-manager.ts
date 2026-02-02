@@ -51,13 +51,14 @@ export class ConfigStorageManager {
 
 	static getProvider(provider: Providers): ProviderConfig {
 		const settings = this.loadSettings()
-		return settings.providers[provider]
+		return settings.providers[provider] || DEFAULT_CONFIG[provider]
 	}
 
 	static updateProvider(provider: Providers, updates: Partial<ProviderConfig>): void {
 		const settings = this.loadSettings()
+		const currentConfig = settings.providers[provider] || DEFAULT_CONFIG[provider]
 		settings.providers[provider] = {
-			...settings.providers[provider],
+			...currentConfig,
 			...updates
 		}
 		this.saveSettings(settings)

@@ -1,4 +1,4 @@
-export type Providers = 'claude' | 'claudible' | 'jjuidev' | 'z'
+export type Providers = 'claude' | 'claudible' | 'jjuidev' | 'kimi' | 'z'
 
 export interface ProviderConfig {
 	ANTHROPIC_BASE_URL: string
@@ -30,6 +30,13 @@ export const DEFAULT_CONFIG: Record<Providers, ProviderConfig> = {
 		ANTHROPIC_DEFAULT_SONNET_MODEL: 'gemini-claude-sonnet-4-5-thinking',
 		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'gemini-claude-sonnet-4-5'
 	},
+	kimi: {
+		ANTHROPIC_BASE_URL: 'https://api.kimi.com/coding',
+		ANTHROPIC_AUTH_TOKEN: '',
+		ANTHROPIC_DEFAULT_OPUS_MODEL: 'kimi-k2.5',
+		ANTHROPIC_DEFAULT_SONNET_MODEL: 'kimi-k2.5',
+		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'kimi-k2.5'
+	},
 	z: {
 		ANTHROPIC_BASE_URL: 'https://api.z.ai/api/anthropic',
 		ANTHROPIC_AUTH_TOKEN: '',
@@ -39,7 +46,7 @@ export const DEFAULT_CONFIG: Record<Providers, ProviderConfig> = {
 	}
 }
 
-export const VALID_PROVIDERS: Providers[] = ['claude', 'claudible', 'jjuidev', 'z']
+export const VALID_PROVIDERS: Providers[] = ['claude', 'claudible', 'jjuidev', 'kimi', 'z']
 
 export function isValidProvider(value: string): value is Providers {
 	return VALID_PROVIDERS.includes(value as Providers)
