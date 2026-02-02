@@ -1,5 +1,11 @@
 # @jjuidev/cs
 
+## 0.0.3
+
+### Patch Changes
+
+- e44c604: Add Kimi provider
+
 ## 0.0.2
 
 ### Patch Changes
