@@ -1,5 +1,11 @@
 # @jjuidev/cs
 
+## 0.0.5
+
+### Patch Changes
+
+- 0d962d2: Support gml-5 model
+
 ## 0.0.4
 
 ### Patch Changes
