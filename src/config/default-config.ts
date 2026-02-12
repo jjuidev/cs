@@ -40,9 +40,9 @@ export const DEFAULT_CONFIG: Record<Providers, ProviderConfig> = {
 	z: {
 		ANTHROPIC_BASE_URL: 'https://api.z.ai/api/anthropic',
 		ANTHROPIC_AUTH_TOKEN: '',
-		ANTHROPIC_DEFAULT_OPUS_MODEL: 'glm-4.7',
-		ANTHROPIC_DEFAULT_SONNET_MODEL: 'glm-4.7',
-		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'glm-4.5-air'
+		ANTHROPIC_DEFAULT_OPUS_MODEL: 'glm-5',
+		ANTHROPIC_DEFAULT_SONNET_MODEL: 'glm-5',
+		ANTHROPIC_DEFAULT_HAIKU_MODEL: 'glm-5'
 	},
 	minimax: {
 		ANTHROPIC_BASE_URL: 'https://api.minimax.io/anthropic',
