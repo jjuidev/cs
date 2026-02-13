@@ -1,5 +1,11 @@
 # @jjuidev/cs
 
+## 0.0.6
+
+### Patch Changes
+
+- 1d0cef2: Add reset flag
+
 ## 0.0.5
 
 ### Patch Changes
