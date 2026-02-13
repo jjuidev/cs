@@ -45,15 +45,18 @@ program
 	.action(currentAction)
 
 program
-	.argument('<provider>', `Provider to switch to: ${VALID_PROVIDERS.join(', ')}`)
+	.argument('[provider]', `Provider to switch to: ${VALID_PROVIDERS.join(', ')}`)
 	.description('Switch to a provider')
+	.option('--reset', 'Reset provider models to default values')
 	.addHelpText(
 		'after',
 		`
 Examples:
-  $ cs claude     # Switch to claude
-  $ cs z          # Switch to z
-  $ cs claudible  # Switch to claudible
+  $ cs claude           # Switch to claude
+  $ cs z                # Switch to z
+  $ cs claudible        # Switch to claudible
+  $ cs --reset          # Reset current provider models and switch
+  $ cs claude --reset   # Reset claude models and switch
   `
 	)
 	.action(switchAction)

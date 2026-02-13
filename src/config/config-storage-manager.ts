@@ -75,6 +75,30 @@ export class ConfigStorageManager {
 		return settings.current
 	}
 
+	/**
+	 * Reset provider models to default values while preserving token and base URL
+	 * @param provider - Provider to reset
+	 * @returns The updated config with reset models
+	 */
+	static resetProviderModels(provider: Providers): ProviderConfig {
+		const settings = this.loadSettings()
+		const currentConfig = settings.providers[provider] || DEFAULT_CONFIG[provider]
+		const defaultConfig = DEFAULT_CONFIG[provider]
+
+		// Reset only model fields, preserve token and base URL
+		const updatedConfig: ProviderConfig = {
+			...currentConfig,
+			ANTHROPIC_DEFAULT_OPUS_MODEL: defaultConfig.ANTHROPIC_DEFAULT_OPUS_MODEL,
+			ANTHROPIC_DEFAULT_SONNET_MODEL: defaultConfig.ANTHROPIC_DEFAULT_SONNET_MODEL,
+			ANTHROPIC_DEFAULT_HAIKU_MODEL: defaultConfig.ANTHROPIC_DEFAULT_HAIKU_MODEL
+		}
+
+		settings.providers[provider] = updatedConfig
+		this.saveSettings(settings)
+
+		return updatedConfig
+	}
+
 	static getAllProviders(): Record<Providers, ProviderConfig> {
 		const settings = this.loadSettings()
 		return settings.providers
