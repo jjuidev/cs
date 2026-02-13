@@ -115,30 +115,6 @@ Display the currently active provider.
 cs current
 ```
 
-### `cs update` - Update CLI
-
-Update cs CLI to a newer version with three convenient modes.
-
-```bash
-# Update to latest version
-cs update
-
-# Interactive version selection (shows 10 newest versions)
-cs update list
-cs update ls
-
-# Update to specific version
-cs update 0.0.3
-```
-
-**Features:**
-
-- ✅ Auto-update to latest stable version
-- ✅ Interactive version selection with @clack/prompts
-- ✅ Specific version installation
-- ✅ Automatic rollback on failure
-- ✅ Installation verification
-
 ## Supported Providers
 
 | Provider  | Base URL                       | Default Models                                                                               |

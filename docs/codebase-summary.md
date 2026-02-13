@@ -13,11 +13,7 @@ src/
 │   │   ├── config-action-handler.ts    # Handle `cs config` command
 │   │   ├── current-action-handler.ts   # Handle `cs current` command
 │   │   ├── list-action-handler.ts      # Handle `cs list` command
-│   │   ├── switch-action-handler.ts    # Handle `cs <provider>` command
-│   │   └── update-action-handler.ts    # Handle `cs update` command
-│   ├── services/          # Shared services
-│   │   ├── npm-version-fetcher.ts      # Fetch versions from npm registry
-│   │   └── package-updater.ts          # Execute updates with rollback
+│   │   └── switch-action-handler.ts    # Handle `cs <provider>` command
 │   ├── claude-settings-updater.ts      # Update ~/.claude/settings.json
 │   └── cs-cli.ts          # Main CLI entry point
 ├── config/                # Configuration management
@@ -48,12 +44,6 @@ Each command has its own action handler:
 - **switch-action-handler.ts**: Switches between providers, updates both Claude settings and shell exports
 - **list-action-handler.ts**: Lists all configured providers with their settings
 - **current-action-handler.ts**: Shows the currently active provider
-- **update-action-handler.ts**: Updates cs CLI to newer versions with interactive selection
-
-#### Services (`services/`)
-
-- **npm-version-fetcher.ts**: Fetches available versions from npm registry API with retry logic
-- **package-updater.ts**: Executes npm install with verification and automatic rollback on failure
 
 #### Claude Settings Updater (`claude-settings-updater.ts`)
 - Updates `~/.claude/settings.json` file
@@ -168,7 +158,6 @@ dist/
 - `commander`: CLI argument parsing
 - `consola`: Structured logging
 - `@clack/prompts`: Interactive CLI prompts
-- `semver`: Version comparison and validation
 
 ### Development Dependencies
 - `@changesets/cli`: Version management

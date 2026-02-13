@@ -4,7 +4,6 @@ import { configAction } from './actions/config-action-handler.js'
 import { switchAction } from './actions/switch-action-handler.js'
 import { listAction } from './actions/list-action-handler.js'
 import { currentAction } from './actions/current-action-handler.js'
-import { updateAction } from './actions/update-action-handler.js'
 import { VALID_PROVIDERS } from '../config/default-config.js'
 import packageJson from '../../package.json' with { type: 'json' }
 
@@ -44,26 +43,6 @@ program
 	.command('current')
 	.description('Show current provider')
 	.action(currentAction)
-
-program
-	.command('update [version]')
-	.description('Update cs CLI to a newer version')
-	.addHelpText(
-		'after',
-		`
-Modes:
-  cs update           Update to latest version
-  cs update list      Show 10 newest versions (interactive)
-  cs update ls        Alias for 'list'
-  cs update <version> Update to specific version (e.g., 0.0.1)
-
-Examples:
-  $ cs update              # Update to latest
-  $ cs update list         # Interactive version selection
-  $ cs update 0.0.3        # Update to version 0.0.3
-  `
-	)
-	.action(updateAction)
 
 program
 	.argument('<provider>', `Provider to switch to: ${VALID_PROVIDERS.join(', ')}`)
