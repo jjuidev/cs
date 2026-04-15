@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "az-cli": {
+      "source": "jjuidev/az-cli",
+      "sourceType": "github",
+      "computedHash": "e1b6f3e2f9b7734b879afc8bd610f186d97426466f17e46936bfde9afdb63931"
+    },
+    "gcnd-ci": {
+      "source": "jjuidev/gcnd-ci",
+      "sourceType": "github",
+      "computedHash": "26023a35f62382ea15a81d79e158269dde6437b115c7318f4583e8b0442d3005"
+    }
+  }
+}
