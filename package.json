@@ -1,7 +1,7 @@
 {
   "name": "@jjuidev/cs",
   "version": "0.0.1",
-  "description": "CS - claude code switch",
+  "description": "CS - code switch",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -14,7 +14,7 @@
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "bin": {
-    "cs-cli": "./dist/cli/cli.js"
+    "cs": "./dist/cli/cli.js"
   },
   "files": [
     "dist"

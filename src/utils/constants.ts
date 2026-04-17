@@ -1,6 +1,6 @@
-// CLI metadata
+/** CLI metadata used by banner and entry point */
 export const CLI_META = {
-	name: 'CS CLI',
-	tagline: 'CS - claude code switch',
-	commandName: 'cs-cli'
+	name: 'CS',
+	tagline: 'CS - code switch',
+	commandName: 'cs'
 }
